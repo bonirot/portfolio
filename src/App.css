@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 #root {
-  width: 100%;
-  max-width: 1280px;
   margin: 0;
   text-align: center;
   font-family: "Inconsolata", monospace;
@@ -13,33 +11,55 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(45deg, #060239, #27046d, #fb515a);
+  min-height: 100vh;
+  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
 }
-
-/* h1 {
-  margin: 1rem 0 1rem 0;
-  font-size: 6rem;
-} */
 
 .iconStyle {
   padding-top: 1rem;
 }
 
 .intro {
-  padding: 4rem 2rem 4rem 2rem;
+  padding: 3rem;
   text-align: left;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
 }
 
-.intro-photo {
-  width: 15%;
-  height: 15%;
+.intro-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.intro-text {
+.intro-card-photo {
+  max-width: 15%;
+  height: auto;
+}
+
+.intro-card-text {
+  margin-left: 2rem;
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.intro-links {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30%;
+}
+.intro-links-responsive {
+  display: none;
+}
+
+.intro-link {
+  width: 100%;
+  font-size: clamp(0.9rem, 1.2vw, 2rem);
 }
 
 .logo {
@@ -55,25 +75,61 @@ body {
   filter: drop-shadow(0 0 2em #a161fbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .intro-links {
+    display: none;
+  }
+  .intro-links-responsive {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    padding: 2rem;
+    flex-direction: column; /* Cambiar a diseño vertical en pantallas pequeñas */
+    align-items: center;
+  }
+  .intro-card {
+    flex-direction: column; /* Colocar la imagen y el texto uno sobre otro */
+    text-align: center;
+  }
+  .intro-card-photo {
+    max-width: 50%; /* Ajustar el tamaño de la imagen en pantallas pequeñas */
+  }
+  .intro-card-text {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    font-size: 1rem; /* Ajustar tamaño del texto en pantallas pequeñas */
+  }
+  .intro-links-responsive {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  .intro-card-photo {
+    max-width: 30%; /* Hacer que la imagen ocupe más espacio en pantallas muy pequeñas */
+  }
+  .intro-card-text {
+    font-size: 0.9rem;
+  }
+  .intro-link {
+    font-size: 1rem;
+  }
 }
