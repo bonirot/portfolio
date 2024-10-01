@@ -31,7 +31,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  margin: 1rem 0 1rem 0;
+  font-size: 4em;
   line-height: 1.1;
 }
 
