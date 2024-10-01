@@ -1,26 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BsFillPostcardFill } from "react-icons/bs";
+
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>¡Hola!</h1>
-      <p>Me llamo Julia Sanchis y soy de Sevilla</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="intro">
+        <img className="photo" src="./cv-photo.png" />
+        <h1>
+          <BsFillPostcardFill style={{ color: "yellow", fontSize: "2rem" }} />
+          ¡Hola!
+        </h1>
+        <p>Me llamo Julia Sanchis y soy de Sevilla.</p>
+        <p>Software Developer</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
