@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 #root {
+  --white: #eaeaeade;
   margin: 0;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
   flex-direction: column;
   background: linear-gradient(45deg, #060239, #27046d, #fb515a);
   min-height: 100vh;
-  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.2vw, 2rem);
 }
 
 .iconStyle {
@@ -50,7 +51,7 @@ body {
 
 .intro-links {
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -68,59 +69,57 @@ body {
 
 .intro-link {
   --color: #060239;
-  --color2: rgb(10, 25, 30);
-  padding: 0.8em 1.75em;
+  --color2: #0a191e;
+  padding: 1rem;
   background-color: transparent;
-  border-radius: 0.5rem;
-  border: 0.2rem solid var(--color);
-  transition: 0.5s;
+  border-radius: 0.4rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  z-index: 1;
-  font-weight: 300;
-  font-size: 17px;
-  font-family: "Roboto", "Segoe UI", sans-serif;
-  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border: 0.15rem solid;
   color: var(--color);
+  z-index: 1;
 }
 
-.intro-link::after,
-.intro-link::before {
+.intro-link::before,
+.intro-link::after {
   content: "";
   display: block;
-  height: 100%;
-  width: 100%;
-  transform: skew(90deg) translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
   position: absolute;
-  inset: 50%;
-  left: 25%;
+  border-radius: 50%;
   z-index: -1;
-  transition: 0.5s ease-out;
   background-color: var(--color);
+  transition: 1s ease;
 }
 
 .intro-link::before {
-  top: -50%;
-  left: -25%;
-  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+  top: -1em;
+  left: -1em;
 }
 
-.intro-link:hover::before {
-  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+.intro-link::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
 }
 
+.intro-link:hover::before,
 .intro-link:hover::after {
-  transform: skew(45deg) translate(-50%, -50%);
+  height: 410px;
+  width: 410px;
 }
 
 .intro-link:hover {
-  color: var(--color2);
+  color: rgb(10, 25, 30);
 }
 
 .intro-link:active {
-  filter: brightness(0.7);
-  transform: scale(0.98);
+  filter: brightness(0.8);
 }
 
 .logo {
@@ -144,8 +143,28 @@ body {
   color: #888;
 }
 
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid var(--white);
+  border-radius: 0.5rem;
+  margin: 3rem;
+}
+.project-container {
+  width: 30%;
+}
+
+.project-img {
+  padding: 1rem;
+  width: 80%;
+  border-radius: 0.3rem;
+}
+
 /* Responsive Design */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1180px) {
   .intro-links {
     display: none;
   }

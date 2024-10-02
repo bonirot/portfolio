@@ -5,8 +5,9 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --white: #eaeaeade;
   color-scheme: light dark;
-  color: #e8e8e8de;
+  color: var(--white);
   background-color: #242424;
 
   font-synthesis: none;
@@ -20,11 +21,11 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: inherit;
 }
 a:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 body {
@@ -35,6 +36,12 @@ body {
   min-height: 100vh;
 }
 
+h1,
+h2 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+}
+
 h1 {
   margin: 1rem 0 1rem 0;
   font-size: 3em;
@@ -43,7 +50,6 @@ h1 {
 }
 
 p {
-  font-family: "Lato", sans-serif;
   font-size: 1rem;
 }
 
@@ -69,12 +75,12 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--white);
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--white);
   }
 }

@@ -2,6 +2,8 @@ import "./App.css";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { PiReadCvLogoFill } from "react-icons/pi";
+import { Button } from "./components/Button";
 
 function App() {
   return (
@@ -10,67 +12,94 @@ function App() {
         <div className="intro-card">
           <img className="intro-card-photo" src="./cv-photo.png" />
           <div className="intro-card-text">
-            <h1>
-              {/* <GrPersonalComputer style={{ fontSize: "2.5rem" }} /> */}
-              Hello World!
-            </h1>
+            <h1>Hello World!</h1>
             <p>
-              Me llamo Julia Sanchis, soy de Sevilla (España) y soy{" "}
-              <strong>Software Developer</strong>. Apasionada, activa y siempre
-              en búsqueda de nuevos horizontes, me defino como una persona con
-              amplios intereses y una gran pasión por la tecnología desde
-              pequeña. Constantemente inmersa en la exploración de las últimas
-              innovaciones. Acualmente estoy realizando un curso{" "}
-              <strong>Diseño y experiencia de usuario</strong> de la mano de{" "}
-              <strong>Google</strong>.
+              My name is Julia Sanchis, I am from Seville (España) and I am a{" "}
+              <strong>Software Developer</strong>. Passionate, active, and
+              always seeking new horizons, I define myself as a person with
+              broad interests and a great passion for technology since
+              childhood. Constantly immersed in exploring the latest
+              innovations. Currently I am taking the <strong>Google</strong>{" "}
+              course on <strong>Design and User Experience</strong>.
             </p>
             <div className="intro-links-responsive">
-              <button className="intro-link">
-                <a href="https://www.github.com/bonirot" target="_blank">
-                  <IoLogoGithub style={{ fontSize: "1.5rem" }} />
-                </a>
-              </button>
-              <button className="intro-link">
-                <a href="https://www.linkedin.com/in/jusanchis" target="_blank">
-                  <FaLinkedin style={{ fontSize: "1.5rem" }} />
-                </a>
-              </button>
-              <button className="intro-link">
-                <a href="mailto:jursanchis@gmail.com" target="_blank">
-                  <IoMdMail style={{ fontSize: "1.5rem" }} />
-                </a>
-              </button>
+              <Button
+                href="https://www.github.com/bonirot"
+                icon={<IoLogoGithub style={{ fontSize: "1.5rem" }} />}
+              />
+
+              <Button
+                href="https://www.linkedin.com/in/jusanchis/?locale=en_US"
+                icon={<FaLinkedin style={{ fontSize: "1.5rem" }} />}
+              />
+              <Button
+                href="mailto:jursanchis@gmail.com"
+                icon={<IoMdMail style={{ fontSize: "1.5rem" }} />}
+              />
+              <Button
+                href="./cv.pdf"
+                icon={<PiReadCvLogoFill style={{ fontSize: "1.5rem" }} />}
+              />
             </div>
           </div>
         </div>
         <div className="intro-links">
-          <button className="intro-link">
-            <a href="https://www.github.com/bonirot" target="_blank">
+          <Button
+            href="https://www.github.com/bonirot"
+            icon={
               <IoLogoGithub
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
-              />{" "}
-              GitHub
-            </a>
-          </button>
-          <button className="intro-link">
-            <a href="https://www.linkedin.com/in/jusanchis" target="_blank">
+              />
+            }
+            text="GitHub"
+          />
+
+          <Button
+            href="https://www.linkedin.com/in/jusanchis/?locale=en_US"
+            icon={
               <FaLinkedin
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
-              />{" "}
-              LinkedIn
-            </a>
-          </button>
-          <button className="intro-link">
-            <a href="mailto:jursanchis@gmail.com" target="_blank">
+              />
+            }
+            text="LinkedIn"
+          />
+          <Button
+            href="mailto:jursanchis@gmail.com"
+            icon={
               <IoMdMail
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
-              />{" "}
-              Email
-            </a>
-          </button>
+              />
+            }
+            text="Contact"
+          />
+          <Button
+            href="./cv.pdf"
+            icon={
+              <PiReadCvLogoFill
+                style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
+              />
+            }
+            text="Resume"
+          />
         </div>
       </div>
-      <div className="workExperience"></div>
+      <h2>MY PROJECTS</h2>
+      <div className="projects">
+        <div className="project-container">
+          <h3>Gappllery</h3>
+          <img
+            className="project-img"
+            src="https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/uwwr5x2vcfuw1v2e1esy.png"
+          />
+        </div>
+        <div className="project-container">
+          <h3>Rick and Morty API</h3>
+          <img
+            className="project-img"
+            src="https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/hdqs1leaxncf4jgvvecx.png"
+          />
+        </div>
+      </div>
     </>
   );
 }
