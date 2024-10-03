@@ -2,6 +2,8 @@
 
 #root {
   --white: #eaeaeade;
+  --color: #060239;
+  --color2: #0a191e;
   margin: 0;
   text-align: center;
   font-family: "Lato", sans-serif;
@@ -14,6 +16,16 @@ body {
   background: linear-gradient(45deg, #060239, #27046d, #fb515a);
   min-height: 100vh;
   font-size: clamp(0.9rem, 1.2vw, 2rem);
+}
+
+.language-toggle {
+  display: flex;
+  justify-content: left;
+}
+
+.language-icon {
+  width: 1.7rem;
+  padding: 1rem;
 }
 
 .iconStyle {
@@ -68,8 +80,6 @@ body {
 }
 
 .intro-link {
-  --color: #060239;
-  --color2: #0a191e;
   padding: 1rem;
   background-color: transparent;
   border-radius: 0.4rem;
@@ -161,6 +171,24 @@ body {
   padding: 1rem;
   width: 80%;
   border-radius: 0.3rem;
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393755;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #707070;
 }
 
 /* Responsive Design */

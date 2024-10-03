@@ -1,33 +1,56 @@
 import "./App.css";
+import { useState } from "react";
+
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { PiReadCvLogoFill } from "react-icons/pi";
-import { Button } from "./components/Button";
+import { translations } from "./utils/translations";
+import { Button } from "./components/button";
+import { Project } from "./components/project";
 
 function App() {
+  const [language, setLanguage] = useState<"en" | "es">("en");
+
+  const changeLanguage = (lang: "en" | "es") => {
+    setLanguage(lang);
+  };
+
+  const t = translations[language];
+
   return (
     <>
+      <header className="language-toggle">
+        {" "}
+        <img
+          onClick={() => changeLanguage("en")}
+          alt="English"
+          src="./uk.png"
+          className="language-icon"
+        />
+        <img
+          onClick={() => changeLanguage("es")}
+          alt="Español"
+          src="./spain.png"
+          className="language-icon"
+        />
+      </header>
       <div className="intro">
         <div className="intro-card">
-          <img className="intro-card-photo" src="./cv-photo.png" />
+          <img
+            className="intro-card-photo"
+            src="./cv-photo.png"
+            alt="Julia Sanchis"
+          />
           <div className="intro-card-text">
-            <h1>Hello World!</h1>
-            <p>
-              My name is Julia Sanchis, I am from Seville (España) and I am a{" "}
-              <strong>Software Developer</strong>. Passionate, active, and
-              always seeking new horizons, I define myself as a person with
-              broad interests and a great passion for technology since
-              childhood. Constantly immersed in exploring the latest
-              innovations. Currently I am taking the <strong>Google</strong>{" "}
-              course on <strong>Design and User Experience</strong>.
-            </p>
+            <h1>{t.hello}</h1>
+            <p>{t.description}</p>
+
             <div className="intro-links-responsive">
               <Button
                 href="https://www.github.com/bonirot"
                 icon={<IoLogoGithub style={{ fontSize: "1.5rem" }} />}
               />
-
               <Button
                 href="https://www.linkedin.com/in/jusanchis/?locale=en_US"
                 icon={<FaLinkedin style={{ fontSize: "1.5rem" }} />}
@@ -43,6 +66,7 @@ function App() {
             </div>
           </div>
         </div>
+
         <div className="intro-links">
           <Button
             href="https://www.github.com/bonirot"
@@ -51,7 +75,7 @@ function App() {
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
               />
             }
-            text="GitHub"
+            text={t.github}
           />
 
           <Button
@@ -61,7 +85,7 @@ function App() {
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
               />
             }
-            text="LinkedIn"
+            text={t.linkedin}
           />
           <Button
             href="mailto:jursanchis@gmail.com"
@@ -70,7 +94,7 @@ function App() {
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
               />
             }
-            text="Contact"
+            text={t.contact}
           />
           <Button
             href="./cv.pdf"
@@ -79,27 +103,15 @@ function App() {
                 style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
               />
             }
-            text="Resume"
+            text={t.resume}
           />
         </div>
       </div>
-      <h2>MY PROJECTS</h2>
-      <div className="projects">
-        <div className="project-container">
-          <h3>Gappllery</h3>
-          <img
-            className="project-img"
-            src="https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/uwwr5x2vcfuw1v2e1esy.png"
-          />
-        </div>
-        <div className="project-container">
-          <h3>Rick and Morty API</h3>
-          <img
-            className="project-img"
-            src="https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/hdqs1leaxncf4jgvvecx.png"
-          />
-        </div>
-      </div>
+
+      <h2>{t.projects}</h2>
+      <section className="projects">
+        <Project />
+      </section>
     </>
   );
 }
