@@ -11,19 +11,17 @@ export function Project() {
 
   return (
     <>
-      {projects.map((p) => {
-        return (
-          <div key={p.id} className="project-container">
-            <h3>{p.name}</h3>
-            <img src={p.img} className="project-img" />
-          </div>
-        );
-      })}
+      {" "}
+      <section className="projects">
+        {projects.map((p) => {
+          return (
+            <div key={p.id} className="project-container">
+              <h3>{p.name}</h3>
+              <img src={p.img} className="project-img" />
+            </div>
+          );
+        })}
+      </section>
     </>
   );
 }
-
-// <div className="project-container">
-//   <h3>{props.name}</h3>
-//   <img className="project-img" src={props.img} alt={props.name} />
-// </div>

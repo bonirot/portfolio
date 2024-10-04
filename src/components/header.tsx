@@ -1,13 +1,10 @@
-import { useState } from "react";
+type HeaderProps = {
+  changeLanguage: (lang: "en" | "es") => void;
+};
 
-export function Header() {
-  const [language, setLanguage] = useState<"en" | "es">("en");
-  const changeLanguage = (lang: "en" | "es") => {
-    setLanguage(lang);
-  };
+function Header({ changeLanguage }: HeaderProps) {
   return (
     <header className="language-toggle">
-      {" "}
       <img
         onClick={() => changeLanguage("en")}
         alt="English"
@@ -23,3 +20,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header;
