@@ -3,9 +3,8 @@ import { useState } from "react";
 
 import { translations } from "./utils/translations";
 import { Project } from "./components/project";
-import { ResponsiveButtons } from "./components/responsiveButtons";
 import { Header } from "./components/header";
-import { NormalButtons } from "./components/normalButtons";
+import { Intro } from "./components/introduction";
 
 function App() {
   const [language, setLanguage] = useState<"en" | "es">("en");
@@ -19,25 +18,8 @@ function App() {
   return (
     <>
       <Header changeLanguage={changeLanguage} />
-      <div className="intro">
-        <div className="intro-card">
-          <img
-            className="intro-card-photo"
-            src="./cv-photo.png"
-            alt="Julia Sanchis"
-          />
-          <div className="intro-card-text">
-            <h1>{t.hello}</h1>
-            <p>{t.description}</p>
-
-            <ResponsiveButtons />
-          </div>
-        </div>
-        <NormalButtons t={t} />
-      </div>
-
-      <h2>{t.projects}</h2>
-      <Project />
+      <Intro t={t} />
+      <Project t={t} />
     </>
   );
 }

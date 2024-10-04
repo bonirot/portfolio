@@ -17,15 +17,17 @@ body {
   min-height: 100vh;
   font-size: clamp(0.9rem, 1.2vw, 2rem);
 }
-
+header {
+  box-shadow: 0 0.01rem 0.3rem var(--color);
+}
 .language-toggle {
   display: flex;
   justify-content: left;
 }
 
 .language-icon {
-  width: 1.7rem;
-  padding: 1rem;
+  width: 1.4rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .iconStyle {
@@ -45,7 +47,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60%;
+  width: 80%;
 }
 
 .intro-card-photo {
@@ -155,20 +157,21 @@ body {
 
 .projects {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border: 0.1rem solid var(--white);
   border-radius: 0.5rem;
-  margin: 3rem;
+  margin: 1.5rem 10rem 1.5rem 10rem;
 }
 .project-container {
-  width: 30%;
+  width: 40%;
   padding: 1rem;
 }
 
 .project-img {
-  width: 80%;
+  width: 75%;
   border-radius: 0.3rem;
 }
 
@@ -203,6 +206,9 @@ body {
   .projects {
     justify-content: space-around;
   }
+  .project-container {
+    width: 40%;
+  }
   .project-img {
     width: 100%;
   }
@@ -233,6 +239,11 @@ body {
   .projects {
     flex-direction: column;
   }
+
+  .project-container {
+    width: 60%;
+  }
+
   .project-img {
     width: 100%;
   }

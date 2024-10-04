@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { IProject } from "../utils/interfaces/project";
 import { fetchProjects } from "../utils/functions/fetchProject";
 
-export function Project() {
+type ProjProps = {
+  t: {
+    projects: string;
+  };
+};
+
+export function Project({ t }: ProjProps) {
   const [projects, setProjects] = useState([] as IProject[]);
 
   useEffect(() => {
@@ -11,6 +17,7 @@ export function Project() {
 
   return (
     <>
+      <h2>{t.projects}</h2>
       <section className="projects">
         {projects.map((p) => {
           return (

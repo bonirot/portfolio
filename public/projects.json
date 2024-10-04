@@ -8,5 +8,15 @@
     "id": 2,
     "name": "Rick&Morty API",
     "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/hdqs1leaxncf4jgvvecx.png"
+  },
+  {
+    "id": 3,
+    "name": "MovieHub",
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/dm3uvrqblrhwuxdzxdya.png"
+  },
+  {
+    "id": 4,
+    "name": "GitMvst",
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/zfpmo3dwdlpupafhott3.png"
   }
 ]
