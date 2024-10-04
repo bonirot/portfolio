@@ -2,21 +2,25 @@
   {
     "id": 1,
     "name": "Gapplery",
-    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/uwwr5x2vcfuw1v2e1esy.png"
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/uwwr5x2vcfuw1v2e1esy.png",
+    "github": "https://github.com/bonirot/ip-ecommerce"
   },
   {
     "id": 2,
-    "name": "Rick&Morty API",
-    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/hdqs1leaxncf4jgvvecx.png"
+    "name": "GitMvst",
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/zfpmo3dwdlpupafhott3.png",
+    "github": "https://github.com/bonirot/GitMvst"
   },
   {
     "id": 3,
     "name": "MovieHub",
-    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/dm3uvrqblrhwuxdzxdya.png"
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/dm3uvrqblrhwuxdzxdya.png",
+    "github": "https://github.com/bonirot/Rick-Morty-API"
   },
   {
     "id": 4,
-    "name": "GitMvst",
-    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/zfpmo3dwdlpupafhott3.png"
+    "name": "Rick&Morty API",
+    "img": "https://res.cloudinary.com/dx4fwligc/image/upload/v1727891352/portfolio-github/hdqs1leaxncf4jgvvecx.png",
+    "github": "https://github.com/bonirot/ip-ecommerce"
   }
 ]

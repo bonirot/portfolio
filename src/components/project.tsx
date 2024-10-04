@@ -23,7 +23,9 @@ export function Project({ t }: ProjProps) {
           return (
             <div key={p.id} className="project-container">
               <h3>{p.name}</h3>
-              <img src={p.img} className="project-img" />
+              <a href={p.github} target="_blank">
+                <img src={p.img} className="project-img" />
+              </a>
             </div>
           );
         })}
