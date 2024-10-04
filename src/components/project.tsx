@@ -11,7 +11,6 @@ export function Project() {
 
   return (
     <>
-      {" "}
       <section className="projects">
         {projects.map((p) => {
           return (

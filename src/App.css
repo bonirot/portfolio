@@ -33,7 +33,7 @@ body {
 }
 
 .intro {
-  padding: 3rem;
+  padding: 2rem;
   text-align: left;
   display: flex;
   flex-direction: row;
@@ -156,7 +156,6 @@ body {
 .projects {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   border: 0.1rem solid var(--white);
@@ -165,10 +164,10 @@ body {
 }
 .project-container {
   width: 30%;
+  padding: 1rem;
 }
 
 .project-img {
-  padding: 1rem;
   width: 80%;
   border-radius: 0.3rem;
 }
@@ -201,6 +200,12 @@ body {
     flex-direction: row;
     gap: 3rem;
   }
+  .projects {
+    justify-content: space-around;
+  }
+  .project-img {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -210,20 +215,26 @@ body {
     align-items: center;
   }
   .intro-card {
-    flex-direction: column; /* Colocar la imagen y el texto uno sobre otro */
+    flex-direction: column;
     text-align: center;
   }
   .intro-card-photo {
-    max-width: 50%; /* Ajustar el tamaño de la imagen en pantallas pequeñas */
+    max-width: 50%;
   }
   .intro-card-text {
     margin-left: 0;
     margin-top: 1.5rem;
-    font-size: 1rem; /* Ajustar tamaño del texto en pantallas pequeñas */
+    font-size: 1rem;
   }
   .intro-links-responsive {
     gap: 1rem;
     font-size: 1rem;
+  }
+  .projects {
+    flex-direction: column;
+  }
+  .project-img {
+    width: 100%;
   }
 }
 
@@ -232,7 +243,7 @@ body {
     padding: 0;
   }
   .intro-card-photo {
-    max-width: 30%; /* Hacer que la imagen ocupe más espacio en pantallas muy pequeñas */
+    max-width: 30%;
   }
   .intro-card-text {
     font-size: 0.9rem;

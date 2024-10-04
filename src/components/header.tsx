@@ -2,7 +2,7 @@ type HeaderProps = {
   changeLanguage: (lang: "en" | "es") => void;
 };
 
-function Header({ changeLanguage }: HeaderProps) {
+export function Header({ changeLanguage }: HeaderProps) {
   return (
     <header className="language-toggle">
       <img
@@ -20,5 +20,3 @@ function Header({ changeLanguage }: HeaderProps) {
     </header>
   );
 }
-
-export default Header;
