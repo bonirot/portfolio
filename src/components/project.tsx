@@ -17,8 +17,8 @@ export function Project({ t }: ProjProps) {
 
   return (
     <>
-      <h2>{t.projects}</h2>
       <section className="projects">
+        <h2 className="projects-headline">{t.projects}</h2>
         {projects.map((p) => {
           return (
             <div key={p.id} className="project-container">

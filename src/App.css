@@ -4,6 +4,7 @@
   --white: #eaeaeade;
   --color: #060239;
   --color2: #0a191e;
+  --color3: #fb515a;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -46,7 +47,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* flex-wrap: wrap; */
 }
 
 .intro-card {
@@ -164,27 +164,91 @@ header {
 
 .projects {
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  border: 0.1rem solid var(--white);
+  gap: 1rem;
   border-radius: 0.5rem;
   margin: 1.5rem 7rem 1.5rem 7rem;
   padding-bottom: 1.5rem;
+}
+.projects-headline {
+  width: 100%;
+  text-align: left;
+  margin-left: 7%;
 }
 .project-container {
   width: 35%;
 }
 
+/*EFECTOS PROYECTOS*/
+
+.project-container {
+  padding-bottom: 1.5rem;
+  background-color: transparent;
+  border-radius: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border: 0.15rem solid;
+  color: var(--white);
+  z-index: 1;
+}
+
+.project-container::before,
+.project-container::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: #eaeaea51;
+  transition: 1s ease;
+}
+
+.project-container::before {
+  top: -1em;
+  left: -1em;
+}
+
+.project-container::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.project-container:hover::before,
+.project-container:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.project-container:hover {
+  color: var(--color);
+}
+
+.project-container:active {
+  filter: brightness(0.8);
+}
+
 .project-img {
   width: 75%;
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
 }
 
 footer {
   font-size: small;
   padding: 0.8rem;
+}
+
+h3 {
+  color: var(--white);
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 /*Scrollbar*/
@@ -226,14 +290,14 @@ footer {
     width: 40%;
   }
   .project-img {
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .intro {
     padding: 2rem;
-    flex-direction: column; /* Cambiar a diseño vertical en pantallas pequeñas */
+    flex-direction: column;
     align-items: center;
   }
   .intro-card {
@@ -263,7 +327,11 @@ footer {
   }
 
   .project-img {
-    width: 100%;
+    width: 90%;
+  }
+  .projects-headline {
+    margin-left: 0;
+    text-align: center;
   }
 }
 
